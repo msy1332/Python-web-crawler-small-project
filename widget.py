@@ -985,10 +985,12 @@ class LoginWidget(QWidget):
                 if u7cb6eb27df4a8cec2e8fef36383ea7a2["nd24058201fd279b48888502eb53faf82"]-c4b9d0acbab128d81dd48ce1d31d898d6>30 or u7cb6eb27df4a8cec2e8fef36383ea7a2["nd24058201fd279b48888502eb53faf82"]-c4b9d0acbab128d81dd48ce1d31d898d6<-30:
                     print("设备时间不准")
                     QMessageBox.information(self,"错误","设备时间不准")
+                    sys.exit()
                 else:
                     if u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["t271b27a22e0f3611"] != self.u97175417f4909295ea98cdbc4fa99df5(self.v0934358e3fdb59d81517ba7c0cdd647b(self.pb708254367a7ef59438e57fbb6a94d4f(""+str(c4b9d0acbab128d81dd48ce1d31d898d6)+""+nf934dc39e1e2a2ce47388c453f532723+""+str(c4b9d0acbab128d81dd48ce1d31d898d6)+""))) or u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["vb655d5bee4"] != self.pb708254367a7ef59438e57fbb6a94d4f(self.u97175417f4909295ea98cdbc4fa99df5(""+nf934dc39e1e2a2ce47388c453f532723+""+str(qd40200d3f1e647d59d28ab920328aaad)+""+"p1f01235dc00997f3fca1b8"+""+str(u7cb6eb27df4a8cec2e8fef36383ea7a2["xa790e86a909ab7a82aa122d2437ed17c"])+"")) or u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["v9b649048"] != self.v0934358e3fdb59d81517ba7c0cdd647b(self.u97175417f4909295ea98cdbc4fa99df5(""+str(u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["r36b999cb83d3c506379fd741727b651e"])+""+str(u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["r36b999cb83d3c506379fd741727b651e"])+""+str(u7cb6eb27df4a8cec2e8fef36383ea7a2["xa790e86a909ab7a82aa122d2437ed17c"])+"")):
                         print("校验失败")
                         QMessageBox.information(self,"错误","校验失败")
+                        sys.exit()
                     else:
                         if u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["t45625b2115629c98645ca4aebf33fb65"] == "single":
                             print("登录成功\n剩余登录次数:" + u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["f03b32acce7db770eaba264b4fd6a5267"])
@@ -1008,6 +1010,7 @@ class LoginWidget(QWidget):
         else:
             print("网络异常")
             QMessageBox.information(self,"错误","网络异常")
+            sys.exit()
 
 
 
@@ -1035,20 +1038,25 @@ class LoginWidget(QWidget):
                 QMessageBox.information(self,"消息",ini_json["msg"])
         else:
             QMessageBox.information(self,"错误","网络异常")
+            sys.exit()
     def Notice(self):
         notice_data = requests.post(self.WEIURL + "543ebab21c7c7265e25002a331ec744e",self.g142e45e32797c1ad51be14b778d0c19b(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2("id=joOAMK0B55B"),"v37866858a23385237abf945a22")),"ihSPMbUG/kDcmWK51dleQjanA0Tfq26y7vJYt+LxsZOXwRp4H9C8I3zgVBoFruEN")),"de541e9bbf0ae9babe5a31b")),"3uOlNXZFnvtjSmAJWRrL0qKhxVBfCYz+7yPbG98sa4Me1Hc5EwUQk/6TDiI2pogd")))
         if notice_data.status_code == 200:
             notice_json = json.loads(self.pba8bf0298e82598e96574620bd3861cb(self.j1731d4f0efc97ca1c2319cf5a024b1d9(notice_data.text),"v5a18fbbefdbbad14ee363c46f0be28352e"))
             if notice_json["code"] == 18932:
                 print("系统公告:")
-                print(notice_json["msg"]["app_gg"])
-                QMessageBox.information(self,"公告",str(notice_json["msg"]["app_gg"]))
+                notice = notice_json["msg"]["app_gg"]
+                print(notice)
+                if notice != "":
+                    QMessageBox.information(self,"公告",str(notice_json["msg"]["app_gg"]))
             else:
                 print(notice_json["msg"])
                 QMessageBox.information(self,"错误",str(notice_json["msg"]))
+                sys.exit()
         else:
             print("网络异常")
             QMessageBox.information(self,"错误","网络异常")
+            sys.exit()
     def get_device_id(self,file_path=".imei"):
         if os.path.exists(file_path):
             with open(file_path, "r") as f:

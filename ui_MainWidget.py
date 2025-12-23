@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
     QLineEdit, QListWidget, QListWidgetItem, QProgressBar,
     QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTextEdit, QVBoxLayout, QWidget)
-import MainWidget_rc
+import rc_MainWidget
 
 class Ui_MainWidget(object):
     def setupUi(self, MainWidget):
@@ -301,6 +301,7 @@ class Ui_MainWidget(object):
         self.homeIconLabel5.setObjectName(u"homeIconLabel5")
         self.homeIconLabel5.setMinimumSize(QSize(40, 40))
         self.homeIconLabel5.setMaximumSize(QSize(40, 40))
+        self.homeIconLabel5.setContextMenuPolicy(Qt.ContextMenuPolicy.DefaultContextMenu)
         self.homeIconLabel5.setTextFormat(Qt.TextFormat.AutoText)
         self.homeIconLabel5.setScaledContents(True)
         self.homeIconLabel5.setWordWrap(False)
@@ -312,7 +313,6 @@ class Ui_MainWidget(object):
         self.homeIconLabel6.setObjectName(u"homeIconLabel6")
         self.homeIconLabel6.setMinimumSize(QSize(30, 40))
         self.homeIconLabel6.setMaximumSize(QSize(40, 40))
-        self.homeIconLabel6.setPixmap(QPixmap(u":/icons/res/icons/githubb.png"))
         self.homeIconLabel6.setScaledContents(True)
         self.homeIconLabel6.setOpenExternalLinks(True)
 
@@ -1302,7 +1302,7 @@ class Ui_MainWidget(object):
         self.chargingBgLabel1.setObjectName(u"chargingBgLabel1")
         self.chargingBgLabel1.setMinimumSize(QSize(133, 133))
         self.chargingBgLabel1.setMaximumSize(QSize(133, 133))
-        self.chargingBgLabel1.setPixmap(QPixmap(u":/background/res/background/bg4.jpg"))
+        self.chargingBgLabel1.setPixmap(QPixmap(u":/background/res/background/bg1.png"))
         self.chargingBgLabel1.setScaledContents(True)
         self.chargingBgLabel1.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
@@ -1501,7 +1501,7 @@ class Ui_MainWidget(object):
 "}")
         self.aboutTextLabel9 = QLabel(self.AboutWidgeRight)
         self.aboutTextLabel9.setObjectName(u"aboutTextLabel9")
-        self.aboutTextLabel9.setGeometry(QRect(80, 420, 211, 16))
+        self.aboutTextLabel9.setGeometry(QRect(80, 410, 331, 51))
         font10 = QFont()
         font10.setFamilies([u"\u65b0\u5b8b\u4f53"])
         font10.setPointSize(15)
@@ -1740,7 +1740,7 @@ class Ui_MainWidget(object):
         self.homeIconLabel5.setText(QCoreApplication.translate("MainWidget", u"<a href=\"https://www.ghnb66.cn\">\n"
 "      <img src=\":/icons/res/icons/\u5730\u7403.png\" width=\"40\" height=\"40\"/>\n"
 "</a>", None))
-        self.homeIconLabel6.setText("")
+        self.homeIconLabel6.setText(QCoreApplication.translate("MainWidget", u"<a href=\"https://github.com/msy1332/Python-web-crawler-small-project\"><img src=\":/icons/res/icons/githubb.png\" width=\"40\" height=\"40\"/></a>", None))
         self.functionTitleLabel1.setText(QCoreApplication.translate("MainWidget", u"\u3056\u3053\u3057\u3058\u3087\u3046", None))
         self.functionTitleLabel2.setText(QCoreApplication.translate("MainWidget", u"\u9f50\u9f50&\u5c0f\u9ea6&\u5869\u9b5a/\u5171\u540c\u5f00\u53d1~_(:\u0437\u300d\u2220)_", None))
         self.functionLabel1.setText(QCoreApplication.translate("MainWidget", u"\u5e73\u53f0:", None))
@@ -1772,9 +1772,9 @@ class Ui_MainWidget(object):
         self.chargingLabel4.setText(QCoreApplication.translate("MainWidget", u"\u2014 VX \u2014", None))
         self.chargingQrcodeLabel4.setText("")
         self.chargingLabel5.setText(QCoreApplication.translate("MainWidget", u"\u2014 QQ\u9891\u9053 \u2014", None))
-        self.chargingLabel6.setText(QCoreApplication.translate("MainWidget", u"\\QQ\u9891\u9053\uff1a123456789", None))
-        self.chargingLabel7.setText(QCoreApplication.translate("MainWidget", u"\\QQ\u9891\u9053\uff1a123456789", None))
-        self.chargingLabel8.setText(QCoreApplication.translate("MainWidget", u"\\\u5b98\u65b9\u5fae\u535a\uff1a123456789", None))
+        self.chargingLabel6.setText(QCoreApplication.translate("MainWidget", u"\\QQ\u9891\u9053\uff1apd56960583", None))
+        self.chargingLabel7.setText(QCoreApplication.translate("MainWidget", u"\u5b98\u65b9\u90ae\u7bb1\uff1aqq@ghnb66.cn", None))
+        self.chargingLabel8.setText(QCoreApplication.translate("MainWidget", u"\u5b98\u65b9\u7f51\u7ad9\uff1awww.ghnb66.cn", None))
         self.chargingBgLabel1.setText("")
         self.aboutTitleLabel1.setText(QCoreApplication.translate("MainWidget", u"\u3056\u3053\u3057\u3058\u3087\u3046", None))
         self.aboutTextLabel3.setText(QCoreApplication.translate("MainWidget", u"\u4f7f\u7528\u8005\u5e94\u4e25\u683c\u9075\u5b88\u300a\u7f51\u7edc\u5b89\u5168\u6cd5\u300b\u53ca\u76ee\u6807\u7f51\u7ad9\u7528\u6237\u534f\u8bae\uff0c\u4e0d\u5f97\u5b9e\u65bd\u4efb\u4f55\u5e72\u6270\u3001\u7834\u574f\u6216\u4fb5\u6743\u6d3b\u52a8\u3002\n"
@@ -1793,7 +1793,7 @@ class Ui_MainWidget(object):
         self.aboutTitleLabel4.setText(QCoreApplication.translate("MainWidget", u"\u4f7f\u7528\u76ee\u7684:", None))
         self.aboutTextLabel2.setText(QCoreApplication.translate("MainWidget", u"\u9879\u76ee\u5168\u90e8\u4ee3\u7801\u3001\u8bbe\u8ba1\u53ca\u6587\u6863\u7b49\u7248\u6743\u5f52\u5e7f\u5dde\u5e02\u767d\u4e91\u5de5\u5546\u6280\u5e08\u5b66\u966225\u7ea7\u7a0b\u5e8f\u8bbe\u8ba1\u4e2d\u6280\u73edPython\u4e8c\u7ec4\u5171\u540c\u6240\u6709\u3002\u672a\u7ecf\u56e2\u961f\u4e66\u9762\u6388\u6743\uff0c\u7981\u6b62\u4efb\u4f55\u5f62\u5f0f\u7684\u590d\u5236\u3001\u4fee\u6539\u3001\u5206\u53d1\u6216\u5546\u4e1a\u5316\u4f7f\u7528\u3002\u6240\u91c7\u96c6\u7684\u6570\u636e\u9075\u5faa\u6559\u80b2\u7814\u7a76\u4e4b\u5408\u7406\u4f7f\u7528\u539f\u5219\uff0c\u4f7f\u7528\u540e\u8bf7\u572824\u5c0f\u65f6\u5185\u5220\u9664\uff01\uff01\uff01\n"
 "\u7248\u6743\u53cd\u9988\u4e0e\u529f\u80fd\u53cd\u9988\uff1a\u5982\u6709\u4efb\u4f55\u7248\u6743\u76f8\u5173\u95ee\u9898\u6216\u529f\u80fd\u53cd\u9988\uff0c\u8bf7\u8054\u7cfb\u56e2\u961f\u90ae\u7bb1\uff1aqq@ghnb66.cn\u3002", None))
-        self.aboutTextLabel9.setText(QCoreApplication.translate("MainWidget", u"\uff1a\u8fd0\u7ef4\u3001\u63d0\u4f9b\u5bc6\u94a5\u9a8c\u8bc1", None))
+        self.aboutTextLabel9.setText(QCoreApplication.translate("MainWidget", u"\uff1a\u8fd0\u7ef4\u3001\u63d0\u4f9b\u5bc6\u94a5\u9a8c\u8bc1\u3001\u5b89\u5168\u670d\u52a1\u3001\u5b98\u7f51\u8fd0\u8425", None))
         self.aboutIconLabel12.setText("")
         self.aboutIconLabel10.setText("")
         self.aboutTextLabel7.setText(QCoreApplication.translate("MainWidget", u":\u611f\u8c22\u9b54\u6cd5\u2606\u5869\u9b5a\u5927\u529b\u652f\u6301\u55b5\u2727\u0669(\u02ca\u03c9\u02cb*)\u0648\u2727", None))

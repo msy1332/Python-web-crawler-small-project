@@ -5,6 +5,7 @@
     </qresource>
     <qresource prefix="/background">
         <file>res/background/background.png</file>
+        <file>res/background/bg1.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>res/icons/哔哩哔哩-off.png</file>

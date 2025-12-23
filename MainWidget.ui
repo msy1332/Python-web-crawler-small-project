@@ -612,6 +612,9 @@ QListWidget::item:selected{
                 <height>40</height>
                </size>
               </property>
+              <property name="contextMenuPolicy">
+               <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+              </property>
               <property name="text">
                <string>&lt;a href=&quot;https://www.ghnb66.cn&quot;&gt;
       &lt;img src=&quot;:/icons/res/icons/地球.png&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
@@ -646,10 +649,7 @@ QListWidget::item:selected{
                </size>
               </property>
               <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="MainWidget.qrc">:/icons/res/icons/githubb.png</pixmap>
+               <string>&lt;a href=&quot;https://github.com/msy1332/Python-web-crawler-small-project&quot;&gt;&lt;img src=&quot;:/icons/res/icons/githubb.png&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;&lt;/a&gt;</string>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -2365,7 +2365,7 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>\QQ频道：123456789</string>
+                     <string>\QQ频道：pd56960583</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2419,7 +2419,7 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>\QQ频道：123456789</string>
+                     <string>官方邮箱：qq@ghnb66.cn</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2476,7 +2476,7 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>\官方微博：123456789</string>
+                     <string>官方网站：www.ghnb66.cn</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2534,7 +2534,7 @@ QPushButton:pressed{
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="MainWidget.qrc">:/background/res/background/bg4.jpg</pixmap>
+                 <pixmap resource="MainWidget.qrc">:/background/res/background/bg1.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -3041,9 +3041,9 @@ QPushButton:pressed{
              <property name="geometry">
               <rect>
                <x>80</x>
-               <y>420</y>
-               <width>211</width>
-               <height>16</height>
+               <y>410</y>
+               <width>331</width>
+               <height>51</height>
               </rect>
              </property>
              <property name="font">
@@ -3060,7 +3060,7 @@ QPushButton:pressed{
 }</string>
              </property>
              <property name="text">
-              <string>：运维、提供密钥验证</string>
+              <string>：运维、提供密钥验证、安全服务、官网运营</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>
