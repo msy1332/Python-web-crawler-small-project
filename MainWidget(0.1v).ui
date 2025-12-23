@@ -1,0 +1,3603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWidget</class>
+ <widget class="QWidget" name="MainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Uang Asura</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <selectedoff>:/login/res/login/Login.png</selectedoff>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MainWidget{
+	background-color: #f0f0f0;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,1">
+   <item>
+    <widget class="QWidget" name="navWidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+	background-color: #ffffff;
+	border-radius: 10px;
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,12">
+      <item>
+       <layout class="QHBoxLayout" name="qHBoxLayout1">
+        <item>
+         <spacer name="horizontalSpacer1">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="logoLabel1">
+          <property name="minimumSize">
+           <size>
+            <width>115</width>
+            <height>115</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>115</width>
+            <height>115</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="MainWidget.qrc">:/login/res/login/Login.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer2">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Policy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="qHBoxLayout2">
+        <item>
+         <spacer name="horizontalSpacer3">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="titleLabel1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>16</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	color: #cbcbcb;
+	background-color: rgba(255,255,255,0.7);
+}</string>
+          </property>
+          <property name="text">
+           <string>Uang Asura</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer4">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QListWidget" name="NavListWidget">
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>170</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListWidget{
+	background-color: rgba(255,255,255,0.7);
+	border: 0px;
+	outline: none;		
+	font-size: 18px;
+}
+
+QListWidget::item{
+	height: 50px;
+	padding: 0px 15px;
+	border-radius: 6px;
+	color: #cbcbcb;
+}
+
+QListWidget::item:selected{
+	background-color: #edf7fe;
+	border-right: 2px solid #dc708d;
+}</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>23</width>
+          <height>23</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>首页</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <selectedoff>:/icons/res/icons/首页.png</selectedoff>
+          </iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>功能</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <selectedoff>:/icons/res/icons/功能管理.png</selectedoff>
+          </iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>充电</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <selectedoff>:/icons/res/icons/特点_闪电发货.png</selectedoff>
+          </iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>关于</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <selectedoff>:/icons/res/icons/关于.png</selectedoff>
+          </iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="mainStackedWidget">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="HomeWidget">
+      <property name="styleSheet">
+       <string notr="true">#HomeWidget{
+	background-color: #f0f0f0;
+}</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_27">
+       <item>
+        <spacer name="homeHorizontalSpacer1">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>228</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="homeVerticalLayout1">
+         <item>
+          <spacer name="homeVerticalSpacer1">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="homeHorizontalLayout1">
+           <item>
+            <spacer name="homeHorizontalSpacer3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeLogoLabel1">
+             <property name="minimumSize">
+              <size>
+               <width>154</width>
+               <height>154</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>154</width>
+               <height>154</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="MainWidget.qrc">:/login/res/login/Login.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="homeHorizontalSpacer4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="homeHorizontalLayout2">
+           <item>
+            <spacer name="homeHorizontalSpacer5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeTitleLabel1">
+             <property name="font">
+              <font>
+               <family>微软雅黑</family>
+               <pointsize>20</pointsize>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+	color: #cbcbcb;
+	background-color: rgba(255,255,255,0.0)
+}</string>
+             </property>
+             <property name="text">
+              <string>Uang Asura</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="homeHorizontalSpacer6">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="homeHorizontalLayout3">
+           <item>
+            <spacer name="homeHorizontalSpacer7">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="homeHorizontalLayout4">
+             <item>
+              <widget class="QLabel" name="homeIconLabel1">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="MainWidget.qrc">:/icons/res/icons/软件介绍.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="homeTitleLabel2">
+               <property name="font">
+                <font>
+                 <family>等线</family>
+                 <pointsize>11</pointsize>
+                 <italic>false</italic>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: #black;
+	background-color: rgba(255,255,255,0.0)
+}</string>
+               </property>
+               <property name="text">
+                <string>这个是一个爬虫程序，以下就是我们支持的平台和官网</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="homeHorizontalSpacer8">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="homeHorizontalLayout5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="homeHorizontalSpacer9">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeIconLabel2">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="MainWidget.qrc">:/icons/res/icons/快手.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeIconLabel3">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="MainWidget.qrc">:/icons/res/icons/哔哩哔哩 (2).png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeIconLabel4">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="MainWidget.qrc">:/icons/res/icons/豆瓣1.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeIconLabel5">
+             <property name="minimumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&lt;a href=&quot;https://www.ghnb66.cn&quot;&gt;
+      &lt;img src=&quot;:/icons/res/icons/地球.png&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+&lt;/a&gt;</string>
+             </property>
+             <property name="textFormat">
+              <enum>Qt::TextFormat::AutoText</enum>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="homeIconLabel6">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>40</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="MainWidget.qrc">:/icons/res/icons/githubb.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="openExternalLinks">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="homeHorizontalSpacer10">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="homeVerticalSpacer2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="homeHorizontalSpacer2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>227</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="FunctionWidget">
+      <property name="styleSheet">
+       <string notr="true">#FunctionWidget{
+	background-color: #f0f0f0;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,5">
+       <item>
+        <layout class="QHBoxLayout" name="functionHorizontalLayout1">
+         <item>
+          <spacer name="functionHorizontalSpacer1">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="functionTitleLabel1">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	color: #c3c3c3;
+	font: 90px &quot;Terminal&quot;;
+	font-family: &quot;宋体&quot;;
+	font-weight: bold;
+	letter-spacing: -10px;
+}</string>
+           </property>
+           <property name="text">
+            <string>ざこしじょう</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="functionHorizontalSpacer2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="functionHorizontalLayout2">
+         <item>
+          <spacer name="functionHorizontalSpacer3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="functionTitleLabel2">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	color: #c3c3c3;
+	font: 20px &quot;Terminal&quot;;
+	font-family: &quot;宋体&quot;;
+	font-weight: bold;
+	letter-spacing: 2px;
+}</string>
+           </property>
+           <property name="text">
+            <string>齐齐&amp;小麦&amp;塩魚/共同开发~_(:з」∠)_</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="functionHorizontalSpacer4">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QWidget" name="GroupWidget1" native="true">
+         <widget class="QWidget" name="subControl2" native="true">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>951</width>
+            <height>601</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#subControl2{
+	border: 1px solid #BBBBBB;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,1,5,1,1">
+           <property name="topMargin">
+            <number>28</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="functionHorizontalLayout3" stretch="0,1,7,0">
+             <item>
+              <spacer name="functionHorizontalSpacer5">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="functionLabel1">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>120</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 10pt;
+	font-family: &quot;黑体&quot;;
+	font-weight: bold;
+}</string>
+               </property>
+               <property name="text">
+                <string>平台:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="platformComboBox">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox{
+	height: 40px;
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+}
+
+QComboBox::drop-down{
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	border-radius: 6px;
+}
+
+QComboBox::down-arrow{	
+	image: url(:/icons/res/icons/下箭头.png);
+	width: 35px;
+	height: 35px;
+}
+
+QComboBox:focus{
+	border: 1px solid black;
+}
+
+QComboBox:!focus{
+	border: 1px solid #d6d6d6;
+}
+
+QComboBox QAbstractItemView {
+	border: 1px solid black;
+	background-color: white;
+}
+</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>快手</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <selectedoff>:/icons/res/icons/快手-copy.png</selectedoff>
+                 </iconset>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>哔哩哔哩</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <selectedoff>:/icons/res/icons/哔哩哔哩-off.png</selectedoff>
+                 </iconset>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>豆瓣电影(仅排行榜)</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <selectedoff>:/icons/res/icons/豆瓣.png</selectedoff>
+                 </iconset>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <spacer name="functionHorizontalSpacer6">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="functionHorizontalLayout4" stretch="0,1,7,0">
+             <item>
+              <spacer name="functionHorizontalSpacer7">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="functionLabel2">
+               <property name="minimumSize">
+                <size>
+                 <width>120</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>120</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 10pt;
+	font-family: &quot;黑体&quot;;
+	font-weight: bold;
+}</string>
+               </property>
+               <property name="text">
+                <string>文件存放位置：</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout9">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLineEdit" name="fileLineEdit">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>1</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+	font-size: 15px;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="morePushButton">
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+	color: #d6d6d6;
+	font-size: 17px;
+	font-weight: bold;
+	background-color: white;
+}
+
+</string>
+                 </property>
+                 <property name="text">
+                  <string>选择</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <selectedoff>:/icons/res/icons/文件夹.png</selectedoff>
+                  </iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="functionHorizontalSpacer8">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QStackedWidget" name="formStackedWidget">
+             <property name="styleSheet">
+              <string notr="true">QTextEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 10px;
+	font-size: 15px;
+	margin: 0px 20px;
+}</string>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="page1">
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <property name="spacing">
+                <number>6</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="functionHorizontalLayout5">
+                 <item>
+                  <spacer name="functionHorizontalSpacer9">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="functionHorizontalLayout6">
+                   <item>
+                    <widget class="QLabel" name="functionLabel3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>120</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 10pt;
+	font-family: &quot;黑体&quot;;
+	font-weight: bold;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>视频的URL地址：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="videoLineEdit1">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>1</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLineEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+	font-size: 15px;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="functionHorizontalSpacer10">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTextEdit" name="functionLogTextEdit1">
+                 <property name="styleSheet">
+                  <string notr="true">QTextEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 10px;
+	font-size: 15px;
+	color: black;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="page2">
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="functionHorizontalLayout7">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <spacer name="functionHorizontalSpacer11">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>42</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="functionHorizontalLayout8">
+                   <item>
+                    <widget class="QLabel" name="functionLabel4">
+                     <property name="minimumSize">
+                      <size>
+                       <width>125</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>125</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 10pt;
+	font-family: &quot;黑体&quot;;
+	font-weight: bold;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>视频的URL地址：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="videoLineEdit2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>1</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLineEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+	font-size: 15px;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="functionHorizontalSpacer12">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="functionHorizontalLayout9">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <spacer name="functionHorizontalSpacer13">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>42</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="functionHorizontalLayout10">
+                   <item>
+                    <widget class="QLabel" name="functionLabel5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>125</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>125</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 10pt;
+	font-family: &quot;黑体&quot;;
+	font-weight: bold;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>选择视频清晰度：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="ClarityComboBox">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QComboBox{
+	height: 40px;
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	padding: 0px 20px;
+}
+
+QComboBox::drop-down{
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	border-radius: 6px;
+}
+
+QComboBox::down-arrow{	
+	image: url(:/icons/res/icons/下箭头.png);
+	width: 35px;
+	height: 35px;
+}
+
+QComboBox:focus{
+	border: 1px solid black;
+}
+
+QComboBox:!focus{
+	border: 1px solid #d6d6d6;
+}
+
+QComboBox QAbstractItemView {
+	border: 1px solid black;
+    outline: 0;
+}
+</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="functionHorizontalSpacer14">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QTextEdit" name="functionLogTextEdit2">
+                 <property name="styleSheet">
+                  <string notr="true">QTextEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 10px;
+	font-size: 15px;
+	color: black;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="page3">
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>10</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTextEdit" name="functionLogTextEdit3">
+                 <property name="styleSheet">
+                  <string notr="true">QTextEdit{
+	border: 0px;
+	outline: none;
+	border: 1px solid #d6d6d6;
+	border-radius: 10px;
+	font-size: 15px;
+	color: black;
+}
+
+QLineEdit:focus{
+	border: 1px solid black;
+}</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="functionHorizontalLayout11">
+             <item>
+              <spacer name="functionHorizontalSpacer15">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QProgressBar" name="progressBar">
+               <property name="styleSheet">
+                <string notr="true">QProgressBar{
+	border: 0px;
+	outline: 0px;
+	background-color: white;
+	border-radius: 8px;
+	border: 1px solid #BEBEBE;
+	color: black;
+	font-size: 13pt;
+	font-weight: bold;
+}
+
+QProgressBar::chunk{
+	background-color: #d3d3d3;
+	border-radius: 8px;
+}</string>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="functionHorizontalSpacer16">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="functionHorizontalLayout12">
+             <item>
+              <spacer name="functionHorizontalSpacer17">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>300</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="startPushButton">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	border: 0;
+	outline: 0;
+	border-radius: 8px;
+	border: 1px solid #bdbdbd;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #d3d3d3;
+}
+
+QPushButton:hover{
+		background-color: #f0f0f0;
+}
+
+QPushButton:pressed{
+		background-color: #d3d3d3;
+}</string>
+               </property>
+               <property name="text">
+                <string>START</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="functionHorizontalSpacer18">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Policy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>300</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QLabel" name="subControl1">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>10</y>
+            <width>201</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 20pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+	border: 1px solid #BEBEBE;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <property name="text">
+           <string>网络爬取.ing</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ChargingWidget">
+      <property name="styleSheet">
+       <string notr="true">#ChargingWidget{
+	background-color: #f0f0f0;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_15" stretch="1,1,4,6,5">
+       <item>
+        <layout class="QHBoxLayout" name="chargingHorizontalLayout1">
+         <item>
+          <spacer name="chargingHorizontalSpacer1">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="chargingTitleLabel1">
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 30pt &quot;Terminal&quot;;
+	font-size: 30pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+           </property>
+           <property name="text">
+            <string>为“ざこしじょう”の米娜桑添加咸鱼能量</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="chargingHorizontalSpacer2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="chargingHorizontalLayout2">
+         <item>
+          <spacer name="chargingHorizontalSpacer3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="chargingTitleLabel2">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="font">
+            <font>
+             <family>Microsoft JhengHei</family>
+             <pointsize>22</pointsize>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+           </property>
+           <property name="midLineWidth">
+            <number>0</number>
+           </property>
+           <property name="text">
+            <string>——  感谢各位活爹大力支持  ——</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="chargingHorizontalSpacer4">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="chargingHorizontalLayout3">
+         <item>
+          <spacer name="chargingHorizontalSpacer5">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="chargingTextLabel1">
+           <property name="font">
+            <font>
+             <family>楷体</family>
+             <pointsize>16</pointsize>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+           </property>
+           <property name="text">
+            <string>在银河纪元2178年，人类文明已跨越数千光年，建立了横跨三个旋臂的星际帝国。
+量子引擎的轰鸣声回荡在曲率通道中，仿生人议员们正在第七议会厅激烈辩论着“第Ω号殖民法案”。
+突然，全息星图上的天狼星β闪烁起不祥的红色——那个被遗弃两百年的前哨站，
+正以违反熵增定律的方式向宇宙广播着圆周率前百万位的质数。
+帝国首席科学家扶正神经接口眼镜，镜片上流过瀑布般的代码：“诸位，我们可能触发了上古文明留下的…” 
+所以能不能先借我50块交个曲率航行违章罚款？昨天骑反重力滑板车去便利店买合成蛋白棒的时候超速了。</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="chargingHorizontalSpacer6">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="chargingHorizontalLayout4">
+         <item>
+          <spacer name="chargingHorizontalSpacer7">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="chargingVerticalLayout1">
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="chargingHorizontalLayout5">
+             <item>
+              <layout class="QVBoxLayout" name="chargingVerticalLayout2">
+               <item>
+                <widget class="QLabel" name="chargingQrcodeLabel1">
+                 <property name="minimumSize">
+                  <size>
+                   <width>173</width>
+                   <height>164</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>173</width>
+                   <height>164</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="MainWidget.qrc">:/QrCode/res/QrCode/wx.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="chargingLabel1">
+                 <property name="font">
+                  <font>
+                   <pointsize>20</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+	color: #dbffb5;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>VX</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="chargingHorizontalSpacer9">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="chargingLabel2">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: #f2dea3;
+}</string>
+               </property>
+               <property name="text">
+                <string>OR</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="chargingHorizontalSpacer10">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="chargingVerticalLayout3">
+               <item>
+                <widget class="QLabel" name="chargingQrcodeLabel2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>173</width>
+                   <height>164</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>173</width>
+                   <height>164</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="MainWidget.qrc">:/QrCode/res/QrCode/zfb.jpg</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="chargingLabel3">
+                 <property name="font">
+                  <font>
+                   <pointsize>20</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+	color: #b1fcff;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>zfb</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="chargingHorizontalSpacer8">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QWidget" name="GroupWidget2" native="true">
+         <widget class="QWidget" name="subControl3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>921</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#subControl3{
+	border: 1px solid #BBBBBB;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="2,5,1">
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>30</width>
+               <height>15</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="chargingHorizontalLayout6">
+             <item>
+              <spacer name="chargingHorizontalSpacer11">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="chargingHorizontalLayout7">
+               <item>
+                <layout class="QVBoxLayout" name="chargingVerticalLayout4">
+                 <item>
+                  <widget class="QLabel" name="chargingQrcodeLabel3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>110</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>110</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="MainWidget.qrc">:/QrCode/res/QrCode/wxCode.jpg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="chargingLabel4">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 12pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>— VX —</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="chargingHorizontalSpacer12">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Policy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="chargingVerticalLayout5">
+                 <item>
+                  <widget class="QLabel" name="chargingQrcodeLabel4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>110</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>110</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="MainWidget.qrc">:/QrCode/res/QrCode/qqCode.jpg</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="chargingLabel5">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 12pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>— QQ频道 —</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="chargingHorizontalSpacer13">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="chargingVerticalLayout6">
+               <item>
+                <layout class="QHBoxLayout" name="chargingHorizontalLayout8">
+                 <item>
+                  <spacer name="chargingHorizontalSpacer14">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="chargingLabel6">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 12pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>\QQ频道：123456789</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="chargingHorizontalSpacer15">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>110</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="chargingHorizontalLayout9">
+                 <item>
+                  <spacer name="chargingHorizontalSpacer16">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>80</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="chargingLabel7">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 12pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>\QQ频道：123456789</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="chargingHorizontalSpacer17">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>80</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="chargingHorizontalLayout10">
+                 <item>
+                  <spacer name="chargingHorizontalSpacer18">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>110</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="chargingLabel8">
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 12pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>\官方微博：123456789</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="chargingHorizontalSpacer19">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Policy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="chargingHorizontalSpacer20">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="chargingBgLabel1">
+               <property name="minimumSize">
+                <size>
+                 <width>133</width>
+                 <height>133</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>133</width>
+                 <height>133</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="MainWidget.qrc">:/background/res/background/bg4.jpg</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="chargingHorizontalSpacer21">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>15</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QLabel" name="subControl4">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>0</y>
+            <width>201</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 20pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+	border: 1px solid #BEBEBE;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <property name="text">
+           <string>粉丝交流群</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="AboutWidget">
+      <property name="styleSheet">
+       <string notr="true">#AboutWidget{
+	background-color: #f0f0f0;
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10" stretch="6,1">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QWidget" name="AboutWidgetLeft" native="true">
+           <property name="styleSheet">
+            <string notr="true">#AboutWidgetLeft{
+	border-right: 1px solid #bbbbbb;
+}</string>
+           </property>
+           <widget class="QLabel" name="aboutTitleLabel1">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>0</y>
+              <width>371</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 45pt &quot;Terminal&quot;;
+	font-size: 45pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>ざこしじょう</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel3">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>500</y>
+              <width>411</width>
+              <height>141</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>13</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>使用者应严格遵守《网络安全法》及目标网站用户协议，不得实施任何干扰、破坏或侵权活动。
+任何违反本声明的滥用行为所引发的一切法律责任与后果，均由使用者自行承担，开发团队概不负责。
+如遇问题或发现安全漏洞等，请联系团队邮箱：qq@ghnb66.cn</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel1">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>160</y>
+              <width>411</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>13</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>本项目为广州市白云工商技师学院python程序二组实践项目，仅用于教育研究及学习目的，旨在学习数据采集与分析技术，严禁用于任何商业、攻击或非法用途。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel4">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>470</y>
+              <width>34</width>
+              <height>34</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>34</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>34</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/警示 感叹号 ！2.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel5">
+            <property name="geometry">
+             <rect>
+              <x>280</x>
+              <y>470</y>
+              <width>34</width>
+              <height>34</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>34</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>34</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/警示 感叹号 ！2.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel6">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>470</y>
+              <width>91</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 16pt &quot;Terminal&quot;;
+	font-size: 16pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>注意事项</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel2">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>60</y>
+              <width>301</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>12</pointsize>
+              <italic>true</italic>
+              <bold>false</bold>
+              <underline>true</underline>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 12pt &quot;Terminal&quot;;
+	font-size: 12pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>齐齐&amp;小麦&amp;塩魚/共同开发~_(:з」∠)_</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel3">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>250</y>
+              <width>28</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/标签.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel5">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>260</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 16pt &quot;Terminal&quot;;
+	font-size: 16pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>版权声明：</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel3">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>90</y>
+              <width>281</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>25</pointsize>
+              <italic>true</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 25pt &quot;Terminal&quot;;
+	font-size: 25pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>-重要声明与风险提示——</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel1">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>80</y>
+              <width>50</width>
+              <height>40</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/警告信号_1765287342.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel2">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>130</y>
+              <width>28</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/标签.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel4">
+            <property name="geometry">
+             <rect>
+              <x>43</x>
+              <y>139</y>
+              <width>111</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 16pt &quot;Terminal&quot;;
+	font-size: 16pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+            </property>
+            <property name="text">
+             <string>使用目的:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel2">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>290</y>
+              <width>401</width>
+              <height>171</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>13</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>项目全部代码、设计及文档等版权归广州市白云工商技师学院25级程序设计中技班Python二组共同所有。未经团队书面授权，禁止任何形式的复制、修改、分发或商业化使用。所采集的数据遵循教育研究之合理使用原则，使用后请在24小时内删除！！！
+版权反馈与功能反馈：如有任何版权相关问题或功能反馈，请联系团队邮箱：qq@ghnb66.cn。</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="openExternalLinks">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget" name="AboutWidgeRight" native="true">
+           <widget class="QLabel" name="aboutTextLabel9">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>420</y>
+              <width>211</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>：运维、提供密钥验证</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel12">
+            <property name="geometry">
+             <rect>
+              <x>45</x>
+              <y>410</y>
+              <width>31</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/编程_1765287508.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel10">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>300</y>
+              <width>41</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/尺子_1765286922.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel7">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>300</y>
+              <width>381</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>:感谢魔法☆塩魚大力支持喵✧٩(ˊωˋ*)و✧</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel8">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>90</y>
+              <width>411</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>20</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>没有他们，就没有Uang Asura!!!</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel11">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>360</y>
+              <width>41</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/服务器_1765287820.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel8">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>370</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>组长&amp;齐齐</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel6">
+            <property name="geometry">
+             <rect>
+              <x>330</x>
+              <y>0</y>
+              <width>81</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/quill-pen-fill.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTitleLabel7">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>10</y>
+              <width>231</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>楷体</family>
+              <pointsize>40</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>特别鸣谢</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel8">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>200</y>
+              <width>41</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/蜘蛛图标_1765287604.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel5">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>200</y>
+              <width>381</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>:感谢麦书记熬夜爆肝的代码！＼(`Δ’)</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel9">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>250</y>
+              <width>41</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/颜料调色盘_1765286791.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel6">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>250</y>
+              <width>261</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>UI框架支持&amp;划水の魚：</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutIconLabel7">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>150</y>
+              <width>51</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>28</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="MainWidget.qrc">:/icons/res/icons/编程_1765287508.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="aboutTextLabel4">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>160</y>
+              <width>271</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>新宋体</family>
+              <pointsize>15</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{
+	color: #BEBEBE;
+}</string>
+            </property>
+            <property name="text">
+             <string>核心开发&amp;累死の牛：</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QWidget" name="GroupWidget3" native="true">
+         <widget class="QWidget" name="subControl6" native="true">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>961</width>
+            <height>81</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#subControl6{
+	border: 1px solid #BBBBBB;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <spacer name="aboutHorizontalSpacer1">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>50</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_20">
+             <item>
+              <widget class="QLabel" name="aboutIconLabel13">
+               <property name="minimumSize">
+                <size>
+                 <width>39</width>
+                 <height>39</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>39</width>
+                 <height>39</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="MainWidget.qrc">:/icons/res/icons/网络 (1).png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="aboutLinkLabel1">
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+	color: #BEBEBE;
+	font: italic 20pt &quot;Terminal&quot;;
+	font-size: 20pt;
+	font-family: &quot;楷体&quot;;
+}</string>
+               </property>
+               <property name="text">
+                <string>&lt;a href=&quot;www.ghnb66.cn&quot;&gt;www.ghnb66.cn&lt;/a&gt;</string>
+               </property>
+               <property name="openExternalLinks">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="aboutHorizontalSpacer2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>643</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QLabel" name="subControl5">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>0</y>
+            <width>201</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel{
+	color: #BEBEBE;
+	font-size: 20pt;
+	font-family: &quot;微软雅黑&quot;;
+	font-weight: bold;
+	border: 1px solid #BEBEBE;
+	background-color: white;
+	border-radius: 6px;
+}</string>
+          </property>
+          <property name="text">
+           <string>官方网址</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="MainWidget.qrc"/>
+ </resources>
+ <connections/>
+</ui>

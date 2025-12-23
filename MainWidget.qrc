@@ -1,0 +1,55 @@
+<RCC>
+    <qresource prefix="/login">
+        <file>res/login/Login.jpg</file>
+        <file>res/login/Login.png</file>
+    </qresource>
+    <qresource prefix="/background">
+        <file>res/background/background.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>res/icons/哔哩哔哩-off.png</file>
+        <file>res/icons/豆瓣.png</file>
+        <file>res/icons/功能管理 (1).png</file>
+        <file>res/icons/功能管理.png</file>
+        <file>res/icons/关于 (1).png</file>
+        <file>res/icons/关于.png</file>
+        <file>res/icons/客服 (1).png</file>
+        <file>res/icons/客服.png</file>
+        <file>res/icons/快手-copy.png</file>
+        <file>res/icons/首页 (1).png</file>
+        <file>res/icons/首页.png</file>
+        <file>res/icons/特点_闪电发货 (1).png</file>
+        <file>res/icons/特点_闪电发货.png</file>
+        <file>res/icons/文件.png</file>
+        <file>res/icons/下箭头.png</file>
+        <file>res/icons/用户 (1).png</file>
+        <file>res/icons/用户.png</file>
+        <file>res/icons/邮箱 (1).png</file>
+        <file>res/icons/邮箱.png</file>
+        <file>res/icons/quill-pen-fill.png</file>
+        <file>res/icons/编程_1765287508.png</file>
+        <file>res/icons/标签.png</file>
+        <file>res/icons/尺子_1765286922.png</file>
+        <file>res/icons/服务器_1765287820.png</file>
+        <file>res/icons/警示 感叹号 ！2.png</file>
+        <file>res/icons/颜料调色盘_1765286791.png</file>
+        <file>res/icons/蜘蛛图标_1765287604.png</file>
+        <file>res/icons/警告信号_1765287342.png</file>
+        <file>res/icons/网络 (1).png</file>
+        <file>res/icons/支持平台.png</file>
+        <file>res/icons/业务介绍.png</file>
+        <file>res/icons/githubb.png</file>
+        <file>res/icons/豆瓣1.png</file>
+        <file>res/icons/哔哩哔哩 (2).png</file>
+        <file>res/icons/快手.png</file>
+        <file>res/icons/地球.png</file>
+        <file>res/icons/软件介绍.png</file>
+        <file>res/icons/文件夹.png</file>
+    </qresource>
+    <qresource prefix="/QrCode">
+        <file>res/QrCode/qqCode.jpg</file>
+        <file>res/QrCode/wx.png</file>
+        <file>res/QrCode/zfb.jpg</file>
+        <file>res/QrCode/wxCode.jpg</file>
+    </qresource>
+</RCC>
