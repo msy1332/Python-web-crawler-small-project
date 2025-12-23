@@ -1,29 +1,35 @@
 
-<center> <img src="./Logo.png" width="200"/> </center>
+<p align="center">
+    <center> <img src="./Logo.png" width="200"/> </center>
+</p>
 
 <center>
 # 项目界面展示（UI Preview）
 
 ## 登录界面
-
-<img src="./preview/lonin.png" width="400"/>
+<p align="center">
+    <img src="./preview/lonin.png" width="400"/>
+</p>
 
 ## 首页界面
-
-<img src="./preview/home.png" width="400"/>
+<p align="center">
+    <img src="./preview/home.png" width="400"/>
+</p>
 
 ## 功能界面
-
-<img src="./preview/function.png" width="400"/>
+<p align="center">
+    <img src="./preview/function.png" width="400"/>
+</p>
 
 ## 充电界面
-
-<img src="./preview/charging.png" width="400"/>
+<p align="center">
+    <img src="./preview/charging.png" width="400"/>
+</p>
 
 ## 关于界面
-
-<img src="./preview/about.png" width="400"/>
-
+<p align="center">
+    <img src="./preview/about.png" width="400"/>
+</p>
 > *图：基于 Qt Widgets 的程序登录界面设计*
 </center>
 ---
