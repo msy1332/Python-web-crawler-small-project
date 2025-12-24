@@ -209,20 +209,24 @@ __marimo__/
 
 
 # 我排除的目录
+.vs/
 bin/
 .qtcreator/
 build/
 dist/
 env/
 Releases/
+__pycache__/
+Uang Asura/
 *.imei
 *.spec
 *.toml
 *.zip
+*.7z
 *.pyproj
 *.css
 *.html
-__pycache__/
-Uang Asura/
-[已对接微验]爬虫.py
+*.exe
 *.vsidx
+*.sln
+[已对接微验]爬虫.py

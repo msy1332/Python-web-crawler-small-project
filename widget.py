@@ -5,14 +5,14 @@ from PySide6.QtWidgets import QApplication, QWidget, QFileDialog, QMessageBox
 from ui_MainWidget import Ui_MainWidget
 from ui_Login import Ui_LoginWidget
 import requests,pprint,sys,re,os,json,csv,threading # 导入所需的模块
-from datetime import datetime # 用于获取当前时间类导入进来
+# from datetime import datetime # 用于获取当前时间类导入进来
 
 # 导入微验证多需的库(不是我写的代码是生成的)
 import hashlib,random,uuid,time,datetime,struct
 
 def getTimeStr() -> str: # 获取当前时间的字符串
     # 通过 datetime库里面的 datetime这个类的 now方法来获取存储着当前时间的日期对象，之后呢我们就通过这个日期对象的 strftime方法来将日期格式化为字符串并返回
-    return datetime.now().strftime("%y%m%d%H%M%S")
+    return datetime.datetime.now().strftime("%y%m%d%H%M%S")
 
 # 定义网络类，来处理网络资源的请求
 class http:
@@ -27,8 +27,15 @@ class http:
         return self.url
     def getHead(self) -> None: # 获取请求的请求头
         return self.head
-    def Get(self) -> bool: # 发送请求并返回获取请求返回的响应对象也就是 response对象返回
-        return requests.get(url = self.url,headers = self.head)
+    def Get(self): # 发送请求并返回获取请求返回的响应对象也就是 response对象返回
+        try:
+            return requests.get(url = self.url,headers = self.head)
+        except: # 使用 except 来捕获所有异常
+            #  通过sys模块的 exc_info()方法来获取异常信息，并且啊这个函数的返回值是一个元组，并且啊这个元组的的第一个元素存储着当前的异常类型，第二个元素是存储着异常对象，第三个元素的话是存储着异常的堆栈
+            # 并通过 append方法来添加异常信息字符串
+            error = sys.exc_info()
+            print(f"Line: {"37"}\nType: {error[0]}\nerror:{error[1]}")
+            return False
 
 # 定义一个爬虫器类，来处理快手视频的爬取逻辑
 class KuaishouCrawler(QObject):
@@ -76,6 +83,8 @@ class KuaishouCrawler(QObject):
         try:
             # 向服务器发起get请求并获取获取服务器返回的响应对象
             response = self.http.Get()
+            if response == False:
+                return False
 
             # with open("kuaishou.html","w",encoding = "utf-8") as file:
             #     file.write(response.text)
@@ -116,9 +125,11 @@ class KuaishouCrawler(QObject):
             print(f"链接：{Url}")
             print("6")
             return True
-        except Exception as e:
-            import traceback
-            traceback.print_exc()
+        except: # 使用 except 来捕获所有异常
+            #  通过sys模块的 exc_info()方法来获取异常信息，并且啊这个函数的返回值是一个元组，并且啊这个元组的的第一个元素存储着当前的异常类型，第二个元素是存储着异常对象，第三个元素的话是存储着异常的堆栈
+            # 并通过 append方法来添加异常信息字符串
+            error = sys.exc_info()
+            print(f"Line: {"126"}\nType: {error[0]}\nerror:{error[1]}")
             return False
 
         # except: # 使用 except 来捕获所有异常
@@ -370,6 +381,8 @@ class BilibiliCrawler(QObject):
         try:
             # 获取当前这个视频的网页源码
             response = self.http.Get()
+            if response == False:
+                return False
             # print(response.text)
 
             # 解析网页源码
@@ -473,14 +486,20 @@ class BilibiliCrawler(QObject):
             # 获取视频的二进制数据
             self.http.setUrl(self.VideoDataDict['所有清晰度视频数据'][Description]['VideoBaseurl'])
             VideoResponse = self.http.Get()
-            with open(f"{tempPath}/1.mp4","wb") as file:
-                file.write(VideoResponse.content)
+            if VideoResponse == False:
+                return False
+            else:
+                with open(f"{tempPath}/1.mp4","wb") as file:
+                    file.write(VideoResponse.content)
 
             # 获取视频的音频的二进制数据
             self.http.setUrl(self.VideoDataDict['所有清晰度视频数据'][Description]['AudioBaseurl'])
             AudioResponse = self.http.Get()
-            with open(f"{tempPath}/1.mp3","wb") as file:
-                file.write(AudioResponse.content)
+            if AudioResponse == False:
+                return False
+            else:
+                with open(f"{tempPath}/1.mp3","wb") as file:
+                    file.write(AudioResponse.content)
 
             # 调用 cmd命令工具来将B站的视频和音频合并
             os.system(f".\\bin\\ffmpeg.exe -y -i {tempPath}/1.mp4 -i {tempPath}/1.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 {self.FilePath + "/" + self.FileName}.mp4")
@@ -563,6 +582,8 @@ class DoubanCrawler(QObject):
                     # print("4")
                     # 向豆瓣服务器发送get请求，并拿到源码
                     response = self.http.Get()
+                    if response == False:
+                        return False
 
                     # with open("douban.html","w",encoding = "utf-8") as file:
                     #     file.write(response.text)
@@ -837,6 +858,7 @@ class Widget(QWidget):
         self.ui.mainStackedWidget.setCurrentIndex(0) # 设置窗口右侧的堆叠控件的默认显示的子界面
         self.ui.platformComboBox.setCurrentIndex(0) # 设置选择平台的组合框控件默认选择的项目
         self.ui.formStackedWidget.setCurrentIndex(0) # 设置动态表单默认显示的表单界面
+        self.ui.progressBar.setValue(0) # 初始化进度条
 
     def currentRowChanged1(self,currentRow) -> None:
         # 通过 QStackedWidget控件的类对象的 setCurrentIndex方法来切换到对应菜单的子页面
@@ -1016,45 +1038,61 @@ class LoginWidget(QWidget):
 
     def update(self):
         print(self,"正在检查更新...")
-        ini_data = requests.post(self.WEIURL + "543ebab21c7c7265e25002a331ec744e",self.g142e45e32797c1ad51be14b778d0c19b(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2("id=5slLGHlHLhg"),"v37866858a23385237abf945a22")),"ihSPMbUG/kDcmWK51dleQjanA0Tfq26y7vJYt+LxsZOXwRp4H9C8I3zgVBoFruEN")),"de541e9bbf0ae9babe5a31b")),"3uOlNXZFnvtjSmAJWRrL0qKhxVBfCYz+7yPbG98sa4Me1Hc5EwUQk/6TDiI2pogd")))
-        if ini_data.status_code == 200:
-            ini_json = json.loads(self.pba8bf0298e82598e96574620bd3861cb(self.j1731d4f0efc97ca1c2319cf5a024b1d9(ini_data.text),"v5a18fbbefdbbad14ee363c46f0be28352e"))
-            if ini_json["code"] == 87132:
-                if ini_json["msg"]["version"] == self.currentVersion:
-                    print("已是最新版本")
-                    QMessageBox.information(self,"消息","已是最新版本")
+        try:
+            ini_data = requests.post(self.WEIURL + "543ebab21c7c7265e25002a331ec744e",self.g142e45e32797c1ad51be14b778d0c19b(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2("id=5slLGHlHLhg"),"v37866858a23385237abf945a22")),"ihSPMbUG/kDcmWK51dleQjanA0Tfq26y7vJYt+LxsZOXwRp4H9C8I3zgVBoFruEN")),"de541e9bbf0ae9babe5a31b")),"3uOlNXZFnvtjSmAJWRrL0qKhxVBfCYz+7yPbG98sa4Me1Hc5EwUQk/6TDiI2pogd")))
+            if ini_data.status_code == 200:
+                ini_json = json.loads(self.pba8bf0298e82598e96574620bd3861cb(self.j1731d4f0efc97ca1c2319cf5a024b1d9(ini_data.text),"v5a18fbbefdbbad14ee363c46f0be28352e"))
+                if ini_json["code"] == 87132:
+                    if ini_json["msg"]["version"] == self.currentVersion:
+                        print("已是最新版本")
+                        QMessageBox.information(self,"消息","已是最新版本")
+                    else:
+                        print("有新版本")
+                        print("当前版本:" + self.currentVersion)
+                        print("最新版本:" + ini_json["msg"]["version"])
+                        print("更新内容:" + ini_json["msg"]["updateshow"])
+                        print("更新地址:" + ini_json["msg"]["updateurl"])
+                        if ini_json["msg"]["updatemust"] == "y":
+                            print("本次更新为强制更新，请更新后使用！")
+                            QMessageBox.information(self,"消息",f'本次更新为强制更新，请更新后使用！更新地址为：<a href="{ini_json["msg"]["updateurl"]}">{ini_json["msg"]["updateurl"]}</a>')
+                            sys.exit()
                 else:
-                    print("有新版本")
-                    print("当前版本:" + self.currentVersion)
-                    print("最新版本:" + ini_json["msg"]["version"])
-                    print("更新内容:" + ini_json["msg"]["updateshow"])
-                    print("更新地址:" + ini_json["msg"]["updateurl"])
-                    if ini_json["msg"]["updatemust"] == "y":
-                        print("本次更新为强制更新，请更新后使用！")
-                        QMessageBox.information(self,"消息",f'本次更新为强制更新，请更新后使用！更新地址为：<a href="{ini_json["msg"]["updateurl"]}">{ini_json["msg"]["updateurl"]}</a>')
-                        sys.exit()
+                    print(ini_json["msg"])
+                    QMessageBox.information(self,"消息",ini_json["msg"])
             else:
-                print(ini_json["msg"])
-                QMessageBox.information(self,"消息",ini_json["msg"])
-        else:
+                QMessageBox.information(self,"错误","网络异常")
+                sys.exit()
+        except: # 使用 except 来捕获所有异常
+            #  通过sys模块的 exc_info()方法来获取异常信息，并且啊这个函数的返回值是一个元组，并且啊这个元组的的第一个元素存储着当前的异常类型，第二个元素是存储着异常对象，第三个元素的话是存储着异常的堆栈
+            # 并通过 append方法来添加异常信息字符串
+            error = sys.exc_info()
+            print(f"Line: {"37"}\nType: {error[0]}\nerror:{error[1]}")
             QMessageBox.information(self,"错误","网络异常")
             sys.exit()
     def Notice(self):
-        notice_data = requests.post(self.WEIURL + "543ebab21c7c7265e25002a331ec744e",self.g142e45e32797c1ad51be14b778d0c19b(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2("id=joOAMK0B55B"),"v37866858a23385237abf945a22")),"ihSPMbUG/kDcmWK51dleQjanA0Tfq26y7vJYt+LxsZOXwRp4H9C8I3zgVBoFruEN")),"de541e9bbf0ae9babe5a31b")),"3uOlNXZFnvtjSmAJWRrL0qKhxVBfCYz+7yPbG98sa4Me1Hc5EwUQk/6TDiI2pogd")))
-        if notice_data.status_code == 200:
-            notice_json = json.loads(self.pba8bf0298e82598e96574620bd3861cb(self.j1731d4f0efc97ca1c2319cf5a024b1d9(notice_data.text),"v5a18fbbefdbbad14ee363c46f0be28352e"))
-            if notice_json["code"] == 18932:
-                print("系统公告:")
-                notice = notice_json["msg"]["app_gg"]
-                print(notice)
-                if notice != "":
-                    QMessageBox.information(self,"公告",str(notice_json["msg"]["app_gg"]))
+        try:
+            notice_data = requests.post(self.WEIURL + "543ebab21c7c7265e25002a331ec744e",self.g142e45e32797c1ad51be14b778d0c19b(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2(self.u1bddec7bff7ca9b7c7c9ffd7be69c157(self.g142e45e32797c1ad51be14b778d0c19b(self.m169a58ff81a2b2f4c0b1378d0d37e903(self.dc7d60c1a48261ed1c5a4ac563337aad2("id=joOAMK0B55B"),"v37866858a23385237abf945a22")),"ihSPMbUG/kDcmWK51dleQjanA0Tfq26y7vJYt+LxsZOXwRp4H9C8I3zgVBoFruEN")),"de541e9bbf0ae9babe5a31b")),"3uOlNXZFnvtjSmAJWRrL0qKhxVBfCYz+7yPbG98sa4Me1Hc5EwUQk/6TDiI2pogd")))
+            if notice_data.status_code == 200:
+                notice_json = json.loads(self.pba8bf0298e82598e96574620bd3861cb(self.j1731d4f0efc97ca1c2319cf5a024b1d9(notice_data.text),"v5a18fbbefdbbad14ee363c46f0be28352e"))
+                if notice_json["code"] == 18932:
+                    print("系统公告:")
+                    notice = notice_json["msg"]["app_gg"]
+                    print(notice)
+                    if notice != "":
+                        QMessageBox.information(self,"公告",str(notice_json["msg"]["app_gg"]))
+                else:
+                    print(notice_json["msg"])
+                    QMessageBox.information(self,"错误",str(notice_json["msg"]))
+                    sys.exit()
             else:
-                print(notice_json["msg"])
-                QMessageBox.information(self,"错误",str(notice_json["msg"]))
+                print("网络异常")
+                QMessageBox.information(self,"错误","网络异常")
                 sys.exit()
-        else:
-            print("网络异常")
+        except: # 使用 except 来捕获所有异常
+            #  通过sys模块的 exc_info()方法来获取异常信息，并且啊这个函数的返回值是一个元组，并且啊这个元组的的第一个元素存储着当前的异常类型，第二个元素是存储着异常对象，第三个元素的话是存储着异常的堆栈
+            # 并通过 append方法来添加异常信息字符串
+            error = sys.exc_info()
+            print(f"Line: {"37"}\nType: {error[0]}\nerror:{error[1]}")
             QMessageBox.information(self,"错误","网络异常")
             sys.exit()
     def get_device_id(self,file_path=".imei"):
