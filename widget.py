@@ -228,9 +228,9 @@ class BilibiliCrawler(QObject):
 
     def getTitle(self,Str : str): # 获取视频的标题
         try:
-            with open("bilibili.html","w") as file:
-                file.write(Str)
-                print("保存成功")
+            # with open("bilibili.html","w") as file:
+            #     file.write(Str)
+            #     print("保存成功")
 
             # 通过正则模块的search来获取第一个匹配的字符串，并且啊这个函数的返回值是一个 Match对象 之后呢在用火这个对象的 group(1) 来获取第一个匹配的组
             title = re.search(r'<title>(.*?)<\/title>',Str).group(1)
@@ -427,7 +427,7 @@ class BilibiliCrawler(QObject):
                     DescriptionSet.add(DescriptionDict.get(VideoData[i]['id']))
                     DescriptionIDSet.add(VideoData[i]['id'])
                     DescriptionIndexDict[VideoData[i]['id']] = i
-                    # print(DescriptionDict.get(VideoData[i]['id']))
+                    # # print(DescriptionDict.get(VideoData[i]['id']))
 
             # print("支持清晰度：" + str(DescriptionSet))
             # print("支持的清晰度索引" + str(DescriptionIndexDict))
