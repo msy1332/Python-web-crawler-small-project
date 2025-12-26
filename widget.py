@@ -4,7 +4,7 @@ from PySide6.QtCore import QTimer,QThread,Slot,QObject,Signal
 from PySide6.QtWidgets import QApplication, QWidget, QFileDialog, QMessageBox
 from ui_MainWidget import Ui_MainWidget
 from ui_Login import Ui_LoginWidget
-import requests,pprint,sys,re,os,json,csv,threading # 导入所需的模块
+import requests,pprint,sys,re,os,json,csv,threading,subprocess # 导入所需的模块
 # from datetime import datetime # 用于获取当前时间类导入进来
 
 # 导入微验证多需的库(不是我写的代码是生成的)
@@ -501,8 +501,29 @@ class BilibiliCrawler(QObject):
                 with open(f"{tempPath}/1.mp3","wb") as file:
                     file.write(AudioResponse.content)
 
+            # 设置启动信息，隐藏控制台窗口
+            startupinfo = subprocess.STARTUPINFO() # 实例化一个 Windows 启动信息类对象
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW # 通过类对象的 dwFlagss属性来设置标志位
+            startupinfo.wShowWindow = subprocess.SW_HIDE # 通过这个类对象的 wShowWindow方法和 subprocess.SW_HIDE值类设置窗口创建时隐藏
+
+             # 执行FFmpeg命令
+            cmd =  [
+                '.\\bin\\ffmpeg.exe',
+                '-y',
+                '-i', f'{tempPath}/1.mp4',
+                '-i', f'{tempPath}/1.mp3',
+                '-c:v', 'copy',
+                '-c:a', 'aac',
+                '-map', '0:v:0',
+                '-map', '1:a:0',
+                f'{self.FilePath}/{self.FileName}.mp4'
+            ]
+            print(cmd)
+            subprocess.run(cmd, startupinfo=startupinfo, capture_output=False) # 通过 subprocess类的 run方法来执行命令，并通过 startupinfo参数和capture_output来设置启动的信息参数对象和设置是否获取返回结果
+
             # 调用 cmd命令工具来将B站的视频和音频合并
-            os.system(f".\\bin\\ffmpeg.exe -y -i {tempPath}/1.mp4 -i {tempPath}/1.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 {self.FilePath + "/" + self.FileName}.mp4")
+            # os.system(f".\\bin\\ffmpeg.exe -y -i {tempPath}/1.mp4 -i {tempPath}/1.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 {self.FilePath + "/" + self.FileName}.mp4")
+            # subprocess.run()
 
 
             return True
@@ -801,12 +822,12 @@ class Widget(QWidget):
                 self.ui.functionLogTextEdit1.append(f"原本视频的url地址：{self.kuaishouCrawler.VideoInfo['url']}")
                 self.ui.functionLogTextEdit1.append(f"解析出来的视频的url地址：{self.kuaishouCrawler.VideoInfo['VideoUrl']}")
                 self.ui.functionLogTextEdit1.append(f"下载成功,文件已保存在: {self.kuaishouCrawler.getFilePath()}/{self.kuaishouCrawler.getFileName()}.mp4")
-                QMessageBox.information(self,"提示",f"Line: 751,下载成功,文件已保存在: {self.kuaishouCrawler.getFilePath()}/{self.kuaishouCrawler.getFileName()}.mp4")
+                QMessageBox.information(self,"提示",f"下载成功,文件已保存在: {self.kuaishouCrawler.getFilePath()}/{self.kuaishouCrawler.getFileName()}.mp4")
                 print("Line: 739,成功")
             else:
                 self.ui.functionLogTextEdit1.append("获取失败，请重新检查输入的url地址是否正确获取是网络连接是否正常！！,正常后,请重新点击下载按钮！！")
                 self.ui.functionLogTextEdit1.append("视频下载失败")
-                QMessageBox.information(self,"错误","Line: 755，下载失败")
+                QMessageBox.information(self,"错误","下载失败")
                 print("Line: 750,失败")
         elif platformStr == "哔哩哔哩":
             if Flag:
@@ -1015,8 +1036,8 @@ class LoginWidget(QWidget):
                         sys.exit()
                     else:
                         if u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["t45625b2115629c98645ca4aebf33fb65"] == "single":
-                            print("登录成功\n剩余登录次数:" + u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["f03b32acce7db770eaba264b4fd6a5267"])
-                            QMessageBox.information(self,"消息","登录成功\n剩余登录次数:" + u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["f03b32acce7db770eaba264b4fd6a5267"])
+                            print("登录成功\n剩余登录次数:" + str(u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["f03b32acce7db770eaba264b4fd6a5267"]))
+                            QMessageBox.information(self,"消息","登录成功\n剩余登录次数:" + str(u7cb6eb27df4a8cec2e8fef36383ea7a2["p7927ae6c208f493597b4d8010d17f881"]["f03b32acce7db770eaba264b4fd6a5267"]))
                             # self.loginBool = True
                             self.hide() # 将当前这个登录窗口隐藏
                             self.window.show() # 显示窗口
