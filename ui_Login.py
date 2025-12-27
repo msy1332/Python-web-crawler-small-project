@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QSizePolicy, QSpacerItem, QVBoxLayout,
     QWidget)
-import MainWidget_rc
+import rc_MainWidget
 
 class Ui_LoginWidget(object):
     def setupUi(self, LoginWidget):
@@ -246,7 +246,7 @@ class Ui_LoginWidget(object):
         self.titleLabel.setText(QCoreApplication.translate("LoginWidget", u"Uang Asura", None))
         self.keyLineEdit.setPlaceholderText(QCoreApplication.translate("LoginWidget", u"\u8bf7\u8f93\u5165\u5bc6\u94a5", None))
         self.loginPushButton.setText(QCoreApplication.translate("LoginWidget", u"\u767b\u5f55", None))
-        self.linkLabel1.setText(QCoreApplication.translate("LoginWidget", u"<a href=\"https://ghnb66.cn\">\u8d2d\u4e70\u5bc6\u94a5</a>", None))
+        self.linkLabel1.setText(QCoreApplication.translate("LoginWidget", u"<a href=\"https://qun.qq.com/universal-share/share?ac=1&authKey=VbKjg3QhTPZXx20FDg1PCyXf0ErU4LluiYPXDLrbEEPuW2IX4TxLgX0ll6DSW4LF&busi_data=eyJncm91cENvZGUiOiIxMDc1MDEwNTg3IiwidG9rZW4iOiJ6MU41dGRKaW10ZDBuOTJiNFp5THRKVk1BalpFdmhrbW5VSkp0RGpTejAxclEydDkxSmhIaVFPcll6MGp1bWFvIiwidWluIjoiMjA1NTIyOTI1MiJ9&data=RSgkeK1jDmhkMVCoBg5P41oYFqB5ftL4yLbL5UsGUgLMZYb9PHtW2cBGkDIqPZN-M6sbfR3KHA9AicRexIaH_Q&svctype=4&tempid=h5_group_info\">\u52a0\u5165QQ\u7fa4</a>", None))
         self.TextLabel1.setText(QCoreApplication.translate("LoginWidget", u"|", None))
         self.linkLabel2.setText(QCoreApplication.translate("LoginWidget", u"<a href=\"https://www.ghnb66.cn\">\u5b98\u7f51</a>", None))
         self.backgroundLabel1.setText("")

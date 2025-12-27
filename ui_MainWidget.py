@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QHBoxLayout, QLabel,
     QLineEdit, QListWidget, QListWidgetItem, QProgressBar,
     QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTextEdit, QVBoxLayout, QWidget)
-import rc_MainWidget
+import MainWidget_rc
 
 class Ui_MainWidget(object):
     def setupUi(self, MainWidget):
@@ -1281,6 +1281,7 @@ class Ui_MainWidget(object):
 "	font-weight: bold;\n"
 "}")
         self.chargingLabel8.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
+        self.chargingLabel8.setOpenExternalLinks(True)
 
         self.chargingHorizontalLayout10.addWidget(self.chargingLabel8)
 
@@ -1706,7 +1707,7 @@ class Ui_MainWidget(object):
 
         self.retranslateUi(MainWidget)
 
-        self.mainStackedWidget.setCurrentIndex(3)
+        self.mainStackedWidget.setCurrentIndex(2)
         self.formStackedWidget.setCurrentIndex(1)
 
 
@@ -1771,10 +1772,10 @@ class Ui_MainWidget(object):
         self.chargingQrcodeLabel3.setText("")
         self.chargingLabel4.setText(QCoreApplication.translate("MainWidget", u"\u2014 VX \u2014", None))
         self.chargingQrcodeLabel4.setText("")
-        self.chargingLabel5.setText(QCoreApplication.translate("MainWidget", u"\u2014 QQ\u9891\u9053 \u2014", None))
-        self.chargingLabel6.setText(QCoreApplication.translate("MainWidget", u"\\QQ\u9891\u9053\uff1apd56960583", None))
+        self.chargingLabel5.setText(QCoreApplication.translate("MainWidget", u"\u2014 QQ\u4ea4\u6d41\u7fa4 \u2014", None))
+        self.chargingLabel6.setText(QCoreApplication.translate("MainWidget", u"\\QQ\u4ea4\u6d41\u7fa4\uff1a1075010587", None))
         self.chargingLabel7.setText(QCoreApplication.translate("MainWidget", u"\u5b98\u65b9\u90ae\u7bb1\uff1aqq@ghnb66.cn", None))
-        self.chargingLabel8.setText(QCoreApplication.translate("MainWidget", u"\u5b98\u65b9\u7f51\u7ad9\uff1awww.ghnb66.cn", None))
+        self.chargingLabel8.setText(QCoreApplication.translate("MainWidget", u"<a href=\"www.ghnb66.cn\" style=\"text-decoration: none;color: white\">\u5b98\u65b9\u7f51\u7ad9\uff1awww.ghnb66.cn</a>", None))
         self.chargingBgLabel1.setText("")
         self.aboutTitleLabel1.setText(QCoreApplication.translate("MainWidget", u"\u3056\u3053\u3057\u3058\u3087\u3046", None))
         self.aboutTextLabel3.setText(QCoreApplication.translate("MainWidget", u"\u4f7f\u7528\u8005\u5e94\u4e25\u683c\u9075\u5b88\u300a\u7f51\u7edc\u5b89\u5168\u6cd5\u300b\u53ca\u76ee\u6807\u7f51\u7ad9\u7528\u6237\u534f\u8bae\uff0c\u4e0d\u5f97\u5b9e\u65bd\u4efb\u4f55\u5e72\u6270\u3001\u7834\u574f\u6216\u4fb5\u6743\u6d3b\u52a8\u3002\n"

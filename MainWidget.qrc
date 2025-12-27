@@ -48,9 +48,9 @@
         <file>res/icons/文件夹.png</file>
     </qresource>
     <qresource prefix="/QrCode">
-        <file>res/QrCode/qqCode.jpg</file>
         <file>res/QrCode/wx.png</file>
         <file>res/QrCode/zfb.jpg</file>
         <file>res/QrCode/wxCode.jpg</file>
+        <file>res/QrCode/qqCode.jpg</file>
     </qresource>
 </RCC>

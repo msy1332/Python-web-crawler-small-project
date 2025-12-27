@@ -344,7 +344,7 @@ QPushButton:pressed{
         <item>
          <widget class="QLabel" name="linkLabel1">
           <property name="text">
-           <string>&lt;a href=&quot;https://ghnb66.cn&quot;&gt;购买密钥&lt;/a&gt;</string>
+           <string>&lt;a href=&quot;https://qun.qq.com/universal-share/share?ac=1&amp;authKey=VbKjg3QhTPZXx20FDg1PCyXf0ErU4LluiYPXDLrbEEPuW2IX4TxLgX0ll6DSW4LF&amp;busi_data=eyJncm91cENvZGUiOiIxMDc1MDEwNTg3IiwidG9rZW4iOiJ6MU41dGRKaW10ZDBuOTJiNFp5THRKVk1BalpFdmhrbW5VSkp0RGpTejAxclEydDkxSmhIaVFPcll6MGp1bWFvIiwidWluIjoiMjA1NTIyOTI1MiJ9&amp;data=RSgkeK1jDmhkMVCoBg5P41oYFqB5ftL4yLbL5UsGUgLMZYb9PHtW2cBGkDIqPZN-M6sbfR3KHA9AicRexIaH_Q&amp;svctype=4&amp;tempid=h5_group_info&quot;&gt;加入QQ群&lt;/a&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignmentFlag::AlignCenter</set>

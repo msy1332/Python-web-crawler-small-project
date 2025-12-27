@@ -270,7 +270,7 @@ QListWidget::item:selected{
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="HomeWidget">
        <property name="styleSheet">
@@ -2310,7 +2310,7 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>— QQ频道 —</string>
+                     <string>— QQ交流群 —</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2365,7 +2365,7 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>\QQ频道：pd56960583</string>
+                     <string>\QQ交流群：1075010587</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2476,10 +2476,13 @@ QPushButton:pressed{
 }</string>
                     </property>
                     <property name="text">
-                     <string>官方网站：www.ghnb66.cn</string>
+                     <string>&lt;a href=&quot;www.ghnb66.cn&quot; style=&quot;text-decoration: none;color: white&quot;&gt;官方网站：www.ghnb66.cn&lt;/a&gt;</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                    </property>
+                    <property name="openExternalLinks">
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>
